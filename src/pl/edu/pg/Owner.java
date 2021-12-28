@@ -1,4 +1,5 @@
 package pl.edu.pg;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Owner {
@@ -11,13 +12,13 @@ public class Owner {
     public enum Gender{FEMALE, MALE;}
     private Gender gender;
 
-    public Owner(String firstName, String lastName, int age) {
+    public Owner(String firstName, String lastName, int age, Gender gender) {
         this.ownerCount = ++ownerCount;
         this.id = ownerCount;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        //this.gender = gender;
+        this.gender = gender;
     }
     public static Owner CreateOwner() {
         System.out.println("Enter owner's first name: ");
@@ -25,12 +26,22 @@ public class Owner {
         String firstName = scanner.nextLine();
         System.out.println("Enter owner's last name: ");
         String lastName = scanner.nextLine();
+        System.out.println("Enter owner's gender ( FEMALE or MALE): ");
+        String sex = scanner.nextLine();
+        Gender tmp_gender;
+        if (sex.toUpperCase().equals("FEMALE")){
+            tmp_gender = Gender.FEMALE;
+        } else if (sex.toUpperCase().equals("MALE")){
+            tmp_gender = Gender.MALE;
+        } else {
+            System.out.println("You have entered an incorrect gender. Default setting to female.  ");
+            tmp_gender = Gender.FEMALE;
+        }
         System.out.println("Enter owner's age: ");
         int age = scanner.nextInt();
-        Owner owner = new Owner(firstName, lastName,age);
+        Owner owner = new Owner(firstName, lastName,age, tmp_gender);
         return owner;
-        //System.out.println("Enter owner's gender ( FEMALE or MALE): ");
-        //String gender = scanner.nextLine();
+
     }
 
     public void info(){
