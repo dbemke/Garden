@@ -17,6 +17,20 @@ public class Owner {
         this.age = age;
         //this.gender = gender;
     }
+    public static Owner CreateOwner() {
+        System.out.println("Enter owner's first name: ");
+        Scanner scanner = new Scanner(System.in);
+        String firstName = scanner.nextLine();
+        System.out.println("Enter owner's last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter owner's age: ");
+        int age = scanner.nextInt();
+        Owner owner = new Owner(firstName, lastName,age);
+        return owner;
+        //System.out.println("Enter owner's gender ( FEMALE or MALE): ");
+        //String gender = scanner.nextLine();
+    }
+
     public void info(){
         System.out.println("Owner's id: "             + ownerCount);
         System.out.println("Owner's name: "           + firstName);

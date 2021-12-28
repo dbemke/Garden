@@ -1,9 +1,7 @@
 package pl.edu.pg;
-import pl.edu.pg.Owner;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class Main {
@@ -18,7 +16,9 @@ public class Main {
         Owner o2 = new Owner("Ciri", "OfNilfgard", 25);
         o2.setGender(Owner.Gender.FEMALE);
         o2.info();
-        OwnersDataInput();
+
+        Owner new_owner = Owner.CreateOwner();
+        new_owner.info();
 
 
         List<Owner> owners = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Main {
 
     }
 
-    private static void OwnersDataInput() {
+   /* private static void OwnersDataInput() {
         System.out.println("Enter owner's first name: ");
         Scanner scanner = new Scanner(System.in);
         String firstName = scanner.nextLine();
@@ -41,7 +41,7 @@ public class Main {
         int age = scanner.nextInt();
         //System.out.println("Enter owner's gender ( FEMALE or MALE): ");
         //String gender = scanner.nextLine();
-    }
+    }*/
 
 
 }
