@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Owner {
 
+    protected long id;
     private static long ownerCount = 0;
     protected String firstName;
     protected String lastName;
@@ -12,6 +13,7 @@ public class Owner {
 
     public Owner(String firstName, String lastName, int age) {
         this.ownerCount = ++ownerCount;
+        this.id = ownerCount;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -32,7 +34,7 @@ public class Owner {
     }
 
     public void info(){
-        System.out.println("Owner's id: "             + ownerCount);
+        System.out.println("Owner's id: "             + id);
         System.out.println("Owner's name: "           + firstName);
         System.out.println("Owner's last name: "      + lastName);
         System.out.println("Owner's age: "            + age);
