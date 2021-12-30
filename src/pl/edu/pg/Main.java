@@ -8,6 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Welcome to my Animal Garden");
+        System.out.println("                           ");
+
+        Menu menu = new Menu();
+        menu.actionChoice();
 
         /*System.out.println("List of owners:");
         Owner o1 = new Owner("Gerald","Ofrywia",35);
@@ -16,6 +20,8 @@ public class Main {
         Owner o2 = new Owner("Ciri", "OfNilfgard", 25);
         o2.setGender(Owner.Gender.FEMALE);
         o2.info(); */
+
+        //Animal.SetPosition();
 
         Owner new_owner = Owner.CreateOwner();
         new_owner.info();

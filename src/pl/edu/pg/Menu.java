@@ -1,0 +1,47 @@
+package pl.edu.pg;
+
+import java.util.Scanner;
+
+
+public class Menu {
+
+
+
+    public void actionChoice() {
+
+        Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
+        while (!exit) {
+            System.out.println("What would you like to do? ");
+            System.out.println("-----------------------");
+            System.out.println("       MAIN MENU       ");
+            System.out.println("-----------------------");
+            System.out.println("1. Add an owner.\n2. Delete an owner.\n3. Print the list of owners.\n4. Exit.");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1: {
+                    System.out.println("add");
+                    break;
+                }
+
+                case 2: {
+                    System.out.println("delete an owner");
+                    break;
+                }
+                case 3: {
+                    System.out.println("list");
+                    break;
+                }
+                case 4: {
+                    System.out.println("exit");
+                    exit = true;
+                    break;
+                }
+                default: {
+                    System.out.println("You have entered a wrong number .");
+                }
+            }
+        }
+
+    }
+}
