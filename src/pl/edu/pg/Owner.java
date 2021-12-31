@@ -2,7 +2,7 @@ package pl.edu.pg;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Owner {
+public class Owner implements java.io.Serializable {
 
     protected long id;
     private static long ownerCount = 0;
