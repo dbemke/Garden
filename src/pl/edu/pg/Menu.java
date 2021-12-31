@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    List<Owner> owners = new ArrayList<>();
+    ArrayList<Owner> owners = new ArrayList<>();
 
     public void actionChoice() {
 
@@ -32,7 +32,17 @@ public class Menu {
                 }
 
                 case 2: {
-                    System.out.println("delete an owner");
+                    for (Owner owner: owners) {
+                        owner.info();
+                    }
+                    System.out.println("Which owner ( ID ) would you like to delete?");
+                    long idChoice = scanner.nextLong();
+                    for (Owner owner: owners) {
+                        if (idChoice == owner.id){
+                            owners.remove(owner);
+                            break;
+                        }
+                    }
                     break;
                 }
                 case 3: {

@@ -51,16 +51,8 @@ public class Owner {
         System.out.println("Owner's age: "            + age);
         System.out.println("Owner's gender: "         + gender);
     }
-    /*public String NameInput(){
-        System.out.println("Enter owner's first name: ");
-        Scanner scanner = new Scanner(System.in);
-        String firstName = scanner.nextLine();
-        System.out.println("Enter owner's last name: ");
-        Scanner scanner = new Scanner(System.in);
-       String lastName = scanner.nextLine();
-        return firstName;
 
-    }*/
+
 ////////////////////////////////////////////////////////
     public static long getOwnerCount() {
     return ownerCount;
@@ -76,10 +68,6 @@ public class Owner {
     public int getAge() {
         return age;
     }
-
-    //public String getGender() {
-     //   return gender;
-
 
     public Gender getGender() {
         return gender;
