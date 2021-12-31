@@ -1,11 +1,13 @@
 package pl.edu.pg;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Menu {
 
-
+    List<Owner> owners = new ArrayList<>();
 
     public void actionChoice() {
 
@@ -13,6 +15,7 @@ public class Menu {
         boolean exit = false;
         while (!exit) {
             System.out.println("What would you like to do? ");
+            System.out.println("                           ");
             System.out.println("-----------------------");
             System.out.println("       MAIN MENU       ");
             System.out.println("-----------------------");
@@ -20,7 +23,11 @@ public class Menu {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1: {
-                    System.out.println("add");
+                    Owner new_owner = Owner.CreateOwner();
+                    owners.add(new_owner);
+                    for (Owner owner: owners) {
+                        owner.info();
+                    }
                     break;
                 }
 
