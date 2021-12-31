@@ -36,7 +36,9 @@ public class Menu {
                     break;
                 }
                 case 3: {
-                    System.out.println("list");
+                    for (Owner owner: owners) {
+                        owner.info();
+                    }
                     break;
                 }
                 case 4: {
