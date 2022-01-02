@@ -25,6 +25,7 @@ public class Menu {
             System.out.println("       MAIN MENU       ");
             System.out.println("-----------------------");
             System.out.println("1. Add an owner.\n2. Delete an owner.\n3. Print the list of owners.\n4. Exit.");
+            System.out.println("-----------------------");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1: {
@@ -38,21 +39,21 @@ public class Menu {
                 }
 
                 case 2: {
+                    int index = 0;
                     for (Owner owner: owners) {
+                        System.out.println("Owner's index: "          + index++);
                         owner.info();
                     }
-                    System.out.println("Which owner ( ID ) would you like to delete?");
-                    long idChoice = scanner.nextLong();
-                    for (Owner owner: owners) {
-                        if (idChoice == owner.id){
-                            owners.remove(owner);
-                            break;
-                        }
-                    }
+                    System.out.println("Which owner ( index ) would you like to delete?");
+                    int ownerindex = scanner.nextInt();
+                    owners.remove(ownerindex);
+                    FileManagment.SaveOwnerstoFile(owners);
                     break;
                 }
                 case 3: {
+                    int index =0;
                     for (Owner owner: owners) {
+                        System.out.println("Owner's index: "          + index++);
                         owner.info();
                     }
                     break;

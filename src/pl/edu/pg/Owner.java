@@ -44,12 +44,13 @@ public class Owner implements java.io.Serializable {
 
     }
 
+
     public void info(){
-        System.out.println("Owner's id: "             + id);
         System.out.println("Owner's name: "           + firstName);
         System.out.println("Owner's last name: "      + lastName);
         System.out.println("Owner's age: "            + age);
         System.out.println("Owner's gender: "         + gender);
+        System.out.println("-----------------------");
     }
 
 

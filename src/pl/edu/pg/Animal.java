@@ -66,21 +66,21 @@ public class Animal {
             System.out.println("Sorry but you can't move your animal in this direction");
         }
     }
-    public void MoveDown(int y){
+    public void MoveDown(){
         if (0 <= y-1 && y-1 < BOARD_SIZE){
             y = y-1;
         } else {
             System.out.println("Sorry but you can't move your animal in this direction");
         }
     }
-    public void MoveRight(int x){
+    public void MoveRight(){
         if (0 <= x+1 && x+1 < BOARD_SIZE){
             x = x+1;
         } else {
             System.out.println("Sorry but you can't move your animal in this direction");
         }
     }
-    public void MoveLeft(int x){
+    public void MoveLeft(){
         if (0 <= x-1 && x-1 < BOARD_SIZE){
             x = x-1;
         } else {
