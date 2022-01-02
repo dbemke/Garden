@@ -11,6 +11,11 @@ public class Menu {
 
     public void actionChoice() {
 
+        ArrayList<Owner> tmpOwners = FileManagment.LoadOwnerfromFile();
+        if (tmpOwners != null) {
+            owners = tmpOwners;
+        }
+
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
@@ -28,6 +33,7 @@ public class Menu {
                     for (Owner owner: owners) {
                         owner.info();
                     }
+                    FileManagment.SaveOwnerstoFile(owners);
                     break;
                 }
 
@@ -53,14 +59,15 @@ public class Menu {
                 }
                 case 4: {
                     System.out.println("exit");
+                    FileManagment.SaveOwnerstoFile(owners);
                     exit = true;
                     break;
                 }
                 default: {
                     System.out.println("You have entered a wrong number .");
                 }
+
             }
         }
-
     }
 }

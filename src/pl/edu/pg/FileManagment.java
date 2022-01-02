@@ -4,23 +4,23 @@ import java.util.ArrayList;
 
 public class FileManagment {
 
-
-    public void SaveFile(ArrayList<Owner> owners) {
+    // taken from https://www.tutorialspoint.com/java/java_serialization.htm
+    public static void SaveOwnerstoFile(ArrayList<Owner> owners) {
         try {
-            FileOutputStream fileOut = new FileOutputStream("plik.ser");
+            FileOutputStream fileOut = new FileOutputStream("file.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(owners);
             out.close();
             fileOut.close();
-            System.out.printf("Serialized data is saved in plik.ser");
+            System.out.println("Serialized data is saved in file.ser");
         } catch (IOException i) {
             i.printStackTrace();
         }
     }
 
-    public ArrayList<Owner> LoadFile(){
+    public static ArrayList<Owner> LoadOwnerfromFile(){
         try {
-            FileInputStream fileIn = new FileInputStream("plik.ser");
+            FileInputStream fileIn = new FileInputStream("file.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Owner> owners = (ArrayList<Owner>) in.readObject();
             in.close();
