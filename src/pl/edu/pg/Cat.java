@@ -14,7 +14,7 @@ public class Cat extends Animal{
         System.out.println("Enter cat's first name: ");
         Scanner scanner = new Scanner(System.in);
         String firstName = scanner.nextLine();
-        System.out.println("Enter cat's breed");
+        System.out.println("Enter cat breed");
         String breed = scanner.nextLine();
         System.out.println("Enter cat's gender ( FEMALE or MALE): ");
         String sex = scanner.nextLine();

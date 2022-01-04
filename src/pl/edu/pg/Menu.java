@@ -24,7 +24,8 @@ public class Menu {
             System.out.println("-----------------------");
             System.out.println("       MAIN MENU       ");
             System.out.println("-----------------------");
-            System.out.println("1. Add an owner.\n2. Delete an owner.\n3. Print the list of owners.\n4. Exit.");
+            System.out.println("1. Add an owner.\n2. Delete an owner.\n" +
+                    "3. Print the list of owners.\n4. Add an animal.\n5. Delete an animal\n6. Exit.");
             System.out.println("-----------------------");
             int choice = scanner.nextInt();
             switch (choice) {
@@ -58,7 +59,21 @@ public class Menu {
                     }
                     break;
                 }
-                case 4: {
+                case 4:{
+                    int index = 0;
+                    for (Owner owner: owners) {
+                        System.out.println("Owner's index: "          + index++);
+                        owner.info();
+                    }
+                    System.out.println("To which owner ( index ) would you like to add an animal?");
+                    int ownerindex = scanner.nextInt();
+                    owners.get(ownerindex);
+
+                }
+                case 5:{
+
+                }
+                case 6: {
                     System.out.println("exit");
                     FileManagment.SaveOwnerstoFile(owners);
                     exit = true;

@@ -1,4 +1,6 @@
 package pl.edu.pg;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,6 +13,8 @@ public class Owner implements java.io.Serializable {
     private int age;
     public enum Gender{FEMALE, MALE;}
     private Gender gender;
+
+    ArrayList<Animal> animals = new ArrayList<Animal>();
 
     public Owner(String firstName, String lastName, int age, Gender gender) {
         this.ownerCount = ++ownerCount;
@@ -53,6 +57,9 @@ public class Owner implements java.io.Serializable {
         System.out.println("-----------------------");
     }
 
+    public void addAnimal(Animal animal){
+        animals.add(animal);
+    }
 
 ////////////////////////////////////////////////////////
     public static long getOwnerCount() {
