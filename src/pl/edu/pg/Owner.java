@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class Owner implements java.io.Serializable {
 
-    protected long id;
+    private long id;
     private static long ownerCount = 0;
-    protected String firstName;
-    protected String lastName;
+    private String firstName;
+    private String lastName;
     private int age;
-    public enum Gender{FEMALE, MALE;}
+    private enum Gender{FEMALE, MALE;}
     private Gender gender;
 
     ArrayList<Animal> animals = new ArrayList<Animal>();
