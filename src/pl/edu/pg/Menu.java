@@ -44,6 +44,7 @@ public class Menu {
                     for (Owner owner: owners) {
                         System.out.println("Owner's index: "          + index++);
                         owner.info();
+                        System.out.println("-----------------------");
                     }
                     System.out.println("Which owner ( index ) would you like to delete?");
                     int ownerindex = scanner.nextInt();
@@ -61,6 +62,7 @@ public class Menu {
                         }
                     } else {
                     System.out.println("List of owners  is empty");
+                    System.out.println("-----------------------");
                     break;
                     }
                     break;
@@ -73,7 +75,11 @@ public class Menu {
                     }
                     System.out.println("To which owner ( index ) would you like to add an animal?");
                     int ownerindex = scanner.nextInt();
-                    owners.get(ownerindex);
+                    Owner owner = owners.get(ownerindex);
+                    Animal animal = createAnimal();
+                    owner.addAnimal(animal);
+                    FileManagment.SaveOwnerstoFile(owners);
+
                     break;
 
                 }
@@ -92,5 +98,34 @@ public class Menu {
 
             }
         }
+    }
+    public Animal createAnimal(){
+        System.out.println("------------------------------------------");
+        System.out.println("What type of animal would you like to add?\n1.A dog\n2.A cat\n3.No animal - exit");
+        System.out.println("------------------------------------------");
+        Scanner scanner = new Scanner(System.in);
+        int animalchoice = scanner.nextInt();
+        switch(animalchoice){
+            case 1:{
+                Dog new_dog = Dog.CreateDog();
+                //owners[ownerindex].add(new_dog);
+                return new_dog;
+            }
+            case 2:{
+                Cat new_cat = Cat.CreateCat();
+                return new_cat;
+
+            }
+            case 3:{
+
+            }
+            default: {
+                System.out.println("You have entered a wrong number .");
+                return null;
+            }
+        }
+
+
+
     }
 }
