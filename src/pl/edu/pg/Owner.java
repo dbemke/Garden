@@ -61,6 +61,16 @@ public class Owner implements java.io.Serializable {
         animals.add(animal);
     }
 
+    public void printListofAnimals(){
+
+        int index = 0;
+        for (Animal animal: animals) {
+            System.out.println("Animal's index: "          + index++);
+            animal.animalInfo();
+            System.out.println("-----------------------");
+        }
+    }
+
     public int animalIdChoice(){
         int index = 0;
         for (Animal animal: animals) {
