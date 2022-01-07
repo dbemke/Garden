@@ -32,19 +32,14 @@ public class Animal implements java.io.Serializable{
         System.out.println("Animal's position: " + "x= " + x + " y= " + y);
     }
 
-    /*public void SetPosition(){
+   /* public int SetPosition(){
         System.out.println("Where would you like to move your animal?: \n 1. Up \n 2.Down \n 3. Right \n 4.Left ");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
+        Animal
         switch (choice){
-            case 1:
-                //System.out.println("up");
-                if (0 <= y+1 && y+1 < BOARD_SIZE){
-                    y = y+1;
-                    break;
-                } else {
-                    System.out.println("Sorry but you can't move your animal in this direction");
-                    break;
+            case 1: {
+
                 }
             case 2: {
                 System.out.println("down");
@@ -65,30 +60,34 @@ public class Animal implements java.io.Serializable{
         
 
     }*/
-    public void MoveUp(int y){
+    public void moveUp(){
         if (0 <= y+1 && y+1 < BOARD_SIZE){
             y = y+1;
+            System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
             System.out.println("Sorry but you can't move your animal in this direction");
         }
     }
-    public void MoveDown(){
+    public void moveDown(){
         if (0 <= y-1 && y-1 < BOARD_SIZE){
             y = y-1;
+            System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
             System.out.println("Sorry but you can't move your animal in this direction");
         }
     }
-    public void MoveRight(){
+    public void moveRight(){
         if (0 <= x+1 && x+1 < BOARD_SIZE){
             x = x+1;
+            System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
             System.out.println("Sorry but you can't move your animal in this direction");
         }
     }
-    public void MoveLeft(){
+    public void moveLeft(){
         if (0 <= x-1 && x-1 < BOARD_SIZE){
             x = x-1;
+            System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
             System.out.println("Sorry but you can't move your animal in this direction");
         }

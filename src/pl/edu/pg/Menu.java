@@ -26,7 +26,8 @@ public class Menu {
             System.out.println("-----------------------");
             System.out.println("1. Add an owner.\n2. Delete an owner.\n" +
                     "3. Print the list of owners.\n4. Add an animal.\n5. Delete an animal\n" +
-                    "6. Print the list of animals of a chosen owner.\n7. Print all animals\n8. Exit.");
+                    "6. Print the list of animals of a chosen owner.\n7. Print all animals\n" +
+                    "8. Move an animal\n9. Exit.");
             System.out.println("-----------------------");
             int choice = scanner.nextInt();
             switch (choice) {
@@ -98,7 +99,42 @@ public class Menu {
                     }
                     break;
                 }
-                case 8: {
+                case 8: {  // move an animal
+
+                    System.out.println("From which owner ( index ) would you like to move an animal?");
+                    int ownerIndex = ownerIdChoice();
+                    Owner owner = owners.get(ownerIndex);
+                    System.out.println("Which animal ( index ) would you like to move?");
+                    owner.printListofAnimals();  // prints animal info
+                    int yourAnimalindex = owner.animalIdChoice();  //prints animal info
+
+                    System.out.println("Where would you like to move your animal?: \n1. Up \n2. Down \n" +
+                            "3. Right \n4. Left ");
+                    int movechoice = scanner.nextInt();
+                    switch (movechoice){
+                        case 1: {
+                            owner.moveAnimalUp(yourAnimalindex);
+                            break;
+
+                        }
+                        case 2: {
+                            owner.moveAnimalDown(yourAnimalindex);
+                            break;
+                        }
+                        case 3: {
+                            owner.moveAnimalRight(yourAnimalindex);
+                            break;
+                        }
+                        case 4: {
+                            owner.moveAnimalLeft(yourAnimalindex);
+                            break;
+                        }
+                        default:{
+                            System.out.println("You have entered a wrong number so your animal will not move.");
+                        }
+                    }
+                }
+                case 9: {
                     System.out.println("exit");
                     FileManagment.SaveOwnerstoFile(owners);
                     exit = true;
