@@ -2,7 +2,7 @@ package pl.edu.pg;
 
 import java.util.Scanner;
 
-public class Animal {
+public class Animal implements java.io.Serializable{
     protected static final int BOARD_SIZE = 15;
     protected String firstname;
     protected int age;
@@ -10,7 +10,6 @@ public class Animal {
     protected int y = 14;
     public enum Gender{FEMALE, MALE;}
     protected Gender gender;
-    // jeszcze wlasciciel
 
 
     public Animal(String firstname, int age, int x, int y, Gender gender) {

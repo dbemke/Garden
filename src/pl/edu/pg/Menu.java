@@ -40,14 +40,7 @@ public class Menu {
                 }
 
                 case 2: {
-                    /*int index = 0;
-                    for (Owner owner: owners) {
-                        System.out.println("Owner's index: "          + index++);
-                        owner.info();
-                        System.out.println("-----------------------");
-                    }
                     System.out.println("Which owner ( index ) would you like to delete?");
-                    int ownerindex = scanner.nextInt();*/
                     int ownerIndex = ownerIdChoice();
                     owners.remove(ownerIndex);
                     FileManagment.SaveOwnerstoFile(owners);
@@ -69,13 +62,8 @@ public class Menu {
                     break;
                 }
                 case 4: {
-                    int index = 0;
-                    for (Owner owner: owners) {
-                        System.out.println("Owner's index: "          + index++);
-                        owner.info();
-                    }
                     System.out.println("To which owner ( index ) would you like to add an animal?");
-                    int ownerIndex = scanner.nextInt();
+                    int ownerIndex = ownerIdChoice();
                     Owner owner = owners.get(ownerIndex);
                     Animal animal = createAnimal();
                     owner.addAnimal(animal);
@@ -107,7 +95,6 @@ public class Menu {
             owner.info();
             System.out.println("-----------------------");
         }
-        System.out.println("Which owner ( index ) would you like to delete?");
         Scanner scanner = new Scanner(System.in);
         int ownerIndex = scanner.nextInt();
         return ownerIndex;
