@@ -75,7 +75,14 @@ public class Menu {
 
                 }
                 case 5:{
-
+                    System.out.println("From which owner ( index ) would you like to remove an animal?");
+                    int ownerIndex = ownerIdChoice();
+                    Owner owner = owners.get(ownerIndex);
+                    owner.printListofAnimals();
+                    int yourAnimalindex = owner.animalIdChoice();
+                    owner.removeAnimal(yourAnimalindex);
+                    FileManagment.SaveOwnerstoFile(owners);
+                    break;
                 }
                 case 6:{
                     System.out.println("Which owner's animals would you like to see? " +

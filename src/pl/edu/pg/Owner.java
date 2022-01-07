@@ -83,6 +83,9 @@ public class Owner implements java.io.Serializable {
         return animalIndex;
 
     }
+    public void removeAnimal(int yourAnimalindex){
+        animals.remove(yourAnimalindex);
+    }
 
 ////////////////////////////////////////////////////////
     public static long getOwnerCount() {
