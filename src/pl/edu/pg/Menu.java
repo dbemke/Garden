@@ -52,14 +52,20 @@ public class Menu {
                     break;
                 }
                 case 3: {
-                    int index =0;
-                    for (Owner owner: owners) {
-                        System.out.println("Owner's index: "          + index++);
-                        owner.info();
+                    if(!(owners.size() == 0)) {
+                        int index = 0;
+                        for (Owner owner : owners) {
+                            System.out.println("Owner's index: " + index++);
+                            owner.info();
+                            break;
+                        }
+                    } else {
+                    System.out.println("List of owners  is empty");
+                    break;
                     }
                     break;
                 }
-                case 4:{
+                case 4: {
                     int index = 0;
                     for (Owner owner: owners) {
                         System.out.println("Owner's index: "          + index++);
@@ -68,6 +74,7 @@ public class Menu {
                     System.out.println("To which owner ( index ) would you like to add an animal?");
                     int ownerindex = scanner.nextInt();
                     owners.get(ownerindex);
+                    break;
 
                 }
                 case 5:{

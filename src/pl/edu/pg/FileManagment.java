@@ -27,8 +27,8 @@ public class FileManagment {
             fileIn.close();
             return owners;
         } catch (IOException i) {
-            i.printStackTrace();
-            System.out.println("Exception problem");
+            //i.printStackTrace();
+            //System.out.println("Exception problem");
             return null;
         } catch (ClassNotFoundException c) {
             System.out.println("Owner class not found");
