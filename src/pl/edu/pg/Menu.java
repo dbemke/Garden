@@ -26,7 +26,7 @@ public class Menu {
             System.out.println("-----------------------");
             System.out.println("1. Add an owner.\n2. Delete an owner.\n" +
                     "3. Print the list of owners.\n4. Add an animal.\n5. Delete an animal\n" +
-                    "6. Print the list of animals.\n7. Exit.");
+                    "6. Print the list of animals of a chosen owner.\n7. Exit.");
             System.out.println("-----------------------");
             int choice = scanner.nextInt();
             switch (choice) {
@@ -53,6 +53,7 @@ public class Menu {
                         for (Owner owner : owners) {
                             System.out.println("Owner's index: " + index++);
                             owner.info();
+                            owner.printListofAnimals();
                             break;
                         }
                     } else {
