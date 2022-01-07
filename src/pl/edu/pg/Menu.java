@@ -109,7 +109,6 @@ public class Menu {
         switch(animalchoice){
             case 1:{
                 Dog new_dog = Dog.CreateDog();
-                //owners[ownerindex].add(new_dog);
                 return new_dog;
             }
             case 2:{

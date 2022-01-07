@@ -24,6 +24,14 @@ public class Animal implements java.io.Serializable{
         this.age = age;
         this.gender = gender;
     }
+    public void animalInfo(){
+        System.out.println("-----------------------");
+        System.out.println("Animal's name: "           + firstname);
+        System.out.println("Animal's age: "            + age);
+        System.out.println("Animal's gender: "         + gender);
+        System.out.println("Animal's position: " + "x= " + x + "y= " + y);
+        System.out.println("-----------------------");
+    }
 
     /*public void SetPosition(){
         System.out.println("Where would you like to move your animal?: \n 1. Up \n 2.Down \n 3. Right \n 4.Left ");
