@@ -10,6 +10,12 @@ public class Cat extends Animal{
         this.breed = breed;
     }
 
+    @Override
+    public void animalInfo() {
+        super.animalInfo();
+        this.breed = breed;
+    }
+
     public static Cat CreateCat() {
         System.out.println("Enter cat's first name: ");
         Scanner scanner = new Scanner(System.in);

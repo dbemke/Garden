@@ -9,6 +9,13 @@ public class Dog extends Animal{
         super(firstname, age, gender);
         this.breed = breed;
     }
+
+    @Override
+    public void animalInfo() {
+        super.animalInfo();
+        this.breed = breed;
+    }
+
     public static Dog CreateDog() {
         System.out.println("Enter dog's first name: ");
         Scanner scanner = new Scanner(System.in);

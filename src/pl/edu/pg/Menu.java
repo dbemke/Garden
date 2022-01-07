@@ -25,7 +25,8 @@ public class Menu {
             System.out.println("       MAIN MENU       ");
             System.out.println("-----------------------");
             System.out.println("1. Add an owner.\n2. Delete an owner.\n" +
-                    "3. Print the list of owners.\n4. Add an animal.\n5. Delete an animal\n6. Exit.");
+                    "3. Print the list of owners.\n4. Add an animal.\n5. Delete an animal\n" +
+                    "6.Print the list of animals.\n7. Exit.");
             System.out.println("-----------------------");
             int choice = scanner.nextInt();
             switch (choice) {
@@ -75,7 +76,10 @@ public class Menu {
                 case 5:{
 
                 }
-                case 6: {
+                case 6:{
+
+                }
+                case 7: {
                     System.out.println("exit");
                     FileManagment.SaveOwnerstoFile(owners);
                     exit = true;
