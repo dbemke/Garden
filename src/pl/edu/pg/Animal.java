@@ -29,8 +29,7 @@ public class Animal implements java.io.Serializable{
         System.out.println("Animal's name: "           + firstname);
         System.out.println("Animal's age: "            + age);
         System.out.println("Animal's gender: "         + gender);
-        System.out.println("Animal's position: " + "x= " + x + "y= " + y);
-        System.out.println("-----------------------");
+        System.out.println("Animal's position: " + "x= " + x + " y= " + y);
     }
 
     /*public void SetPosition(){

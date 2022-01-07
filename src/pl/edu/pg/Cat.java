@@ -13,7 +13,7 @@ public class Cat extends Animal{
     @Override
     public void animalInfo() {
         super.animalInfo();
-        this.breed = breed;
+        System.out.println("Animal breed: "            + breed);
     }
 
     public static Cat CreateCat() {
