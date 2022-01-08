@@ -1,5 +1,6 @@
 package pl.edu.pg;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Cat extends Animal{
@@ -17,26 +18,31 @@ public class Cat extends Animal{
     }
 
     public static Cat CreateCat() {
-        System.out.println("Enter cat's first name: ");
-        Scanner scanner = new Scanner(System.in);
-        String firstName = scanner.nextLine();
-        System.out.println("Enter cat breed");
-        String breed = scanner.nextLine();
-        System.out.println("Enter cat's gender ( FEMALE or MALE): ");
-        String sex = scanner.nextLine();
-        Gender tmp_gender;
-        if (sex.toUpperCase().equals("FEMALE")){
-            tmp_gender = Gender.FEMALE;
-        } else if (sex.toUpperCase().equals("MALE")){
-            tmp_gender = Gender.MALE;
-        } else {
-            System.out.println("You have entered an incorrect gender. Default setting to female.  ");
-            tmp_gender = Gender.FEMALE;
+        try {
+            System.out.println("Enter cat's first name: ");
+            Scanner scanner = new Scanner(System.in);
+            String firstName = scanner.nextLine();
+            System.out.println("Enter cat breed");
+            String breed = scanner.nextLine();
+            System.out.println("Enter cat's gender ( FEMALE or MALE): ");
+            String sex = scanner.nextLine();
+            Gender tmp_gender;
+            if (sex.toUpperCase().equals("FEMALE")) {
+                tmp_gender = Gender.FEMALE;
+            } else if (sex.toUpperCase().equals("MALE")) {
+                tmp_gender = Gender.MALE;
+            } else {
+                System.out.println("You have entered an incorrect gender. Default setting to female.  ");
+                tmp_gender = Gender.FEMALE;
+            }
+            System.out.println("Enter cat's age: ");
+            int age = scanner.nextInt();
+            Cat cat = new Cat(firstName, age, tmp_gender, breed);
+            return cat;
+        } catch (InputMismatchException e){
+            System.out.println("Wrong entry");
+            return null;
         }
-        System.out.println("Enter cat's age: ");
-        int age = scanner.nextInt();
-        Cat cat = new Cat(firstName, age, tmp_gender, breed);
-        return cat;
 
     }
 }

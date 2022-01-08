@@ -3,6 +3,8 @@ package pl.edu.pg;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.lang.IndexOutOfBoundsException;
+import java.util.InputMismatchException;
 
 
 public class Menu {
@@ -36,8 +38,10 @@ public class Menu {
             switch (choice) {
                 case 1: {
                     Owner new_owner = Owner.CreateOwner();
-                    owners.add(new_owner);
-                    FileManagment.SaveOwnerstoFile(owners);
+                    if (new_owner!= null){
+                        owners.add(new_owner);
+                        FileManagment.SaveOwnerstoFile(owners);
+                    }
                     break;
                 }
 
@@ -68,19 +72,27 @@ public class Menu {
                     int ownerIndex = ownerIdChoice();
                     Owner owner = owners.get(ownerIndex);
                     Animal animal = createAnimal();
-                    owner.addAnimal(animal);
-                    FileManagment.SaveOwnerstoFile(owners);
+                    if (animal!= null){
+                        owner.addAnimal(animal);
+                        FileManagment.SaveOwnerstoFile(owners);
+                    }
                     break;
                 }
                 case 5:{ // remove an animal
-                    System.out.println("From which owner ( index ) would you like to remove an animal?");
-                    int ownerIndex = ownerIdChoice();
-                    Owner owner = owners.get(ownerIndex);
-                    //owner.printListofAnimals();
-                    System.out.println("Which animal ( index ) would you like to remove?");
-                    int yourAnimalindex = owner.animalIdChoice();//prints list of animal
-                    owner.removeAnimal(yourAnimalindex);
-                    FileManagment.SaveOwnerstoFile(owners);
+                    try {
+                        System.out.println("From which owner ( index ) would you like to remove an animal?");
+                        int ownerIndex = ownerIdChoice();
+                        Owner owner = owners.get(ownerIndex);
+                        //owner.printListofAnimals();
+                        System.out.println("Which animal ( index ) would you like to remove?");
+                        int yourAnimalindex = owner.animalIdChoice();//prints list of animal
+                        owner.removeAnimal(yourAnimalindex);
+                        FileManagment.SaveOwnerstoFile(owners);
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("You have entered wrong index");
+                    } catch (InputMismatchException e){
+                        System.out.println("Wrong entry");
+                    }
                     break;
                 }
                 case 6:{ // list of animals of a chosen owner
@@ -172,7 +184,6 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         int ownerIndex = scanner.nextInt();
         return ownerIndex;
-
     }
     public Animal createAnimal(){
         System.out.println("------------------------------------------");

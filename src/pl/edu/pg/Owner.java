@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Owner implements java.io.Serializable {
 
@@ -25,27 +26,31 @@ public class Owner implements java.io.Serializable {
         this.gender = gender;
     }
     public static Owner CreateOwner() {
-        System.out.println("Enter owner's first name: ");
-        Scanner scanner = new Scanner(System.in);
-        String firstName = scanner.nextLine();
-        System.out.println("Enter owner's last name: ");
-        String lastName = scanner.nextLine();
-        System.out.println("Enter owner's gender ( FEMALE or MALE): ");
-        String sex = scanner.nextLine();
-        Gender tmp_gender;
-        if (sex.toUpperCase().equals("FEMALE")){
-            tmp_gender = Gender.FEMALE;
-        } else if (sex.toUpperCase().equals("MALE")){
-            tmp_gender = Gender.MALE;
-        } else {
-            System.out.println("You have entered an incorrect gender. Default setting to female.  ");
-            tmp_gender = Gender.FEMALE;
+        try {
+            System.out.println("Enter owner's first name: ");
+            Scanner scanner = new Scanner(System.in);
+            String firstName = scanner.nextLine();
+            System.out.println("Enter owner's last name: ");
+            String lastName = scanner.nextLine();
+            System.out.println("Enter owner's gender ( FEMALE or MALE): ");
+            String sex = scanner.nextLine();
+            Gender tmp_gender;
+            if (sex.toUpperCase().equals("FEMALE")) {
+                tmp_gender = Gender.FEMALE;
+            } else if (sex.toUpperCase().equals("MALE")) {
+                tmp_gender = Gender.MALE;
+            } else {
+                System.out.println("You have entered an incorrect gender. Default setting to female.  ");
+                tmp_gender = Gender.FEMALE;
+            }
+            System.out.println("Enter owner's age: ");
+            int age = scanner.nextInt();
+            Owner owner = new Owner(firstName, lastName, age, tmp_gender);
+            return owner;
+        } catch (InputMismatchException e){
+            System.out.println("Wrong age entry");
+            return null;
         }
-        System.out.println("Enter owner's age: ");
-        int age = scanner.nextInt();
-        Owner owner = new Owner(firstName, lastName,age, tmp_gender);
-        return owner;
-
     }
 
 

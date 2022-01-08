@@ -1,5 +1,6 @@
 package pl.edu.pg;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Dog extends Animal{
@@ -17,6 +18,7 @@ public class Dog extends Animal{
     }
 
     public static Dog CreateDog() {
+        try{
         System.out.println("Enter dog's first name: ");
         Scanner scanner = new Scanner(System.in);
         String firstName = scanner.nextLine();
@@ -37,6 +39,11 @@ public class Dog extends Animal{
         int age = scanner.nextInt();
         Dog dog = new Dog(firstName, age, tmp_gender, breed);
         return dog;
+        } catch (InputMismatchException e){
+            System.out.println("Wrong age entry");
+            return null;
+        }
+
 
     }
 }
