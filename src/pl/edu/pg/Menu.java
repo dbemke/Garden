@@ -122,41 +122,47 @@ public class Menu {
                     break;
                 }
                 case 8: {  // move an animal
-                    System.out.println("------------------------------------------------------------");
-                    System.out.println("From which owner ( index ) would you like to move an animal?");
-                    System.out.println("------------------------------------------------------------");
-                    int ownerIndex = ownerIdChoice();
-                    Owner owner = owners.get(ownerIndex);
-                    System.out.println("---------------------------------------------");
-                    System.out.println("Which animal ( index ) would you like to move?");
-                    System.out.println("---------------------------------------------");
-                    int yourAnimalindex = owner.animalIdChoice();
-                    System.out.println("------------------------------------------");
-                    System.out.println("Where would you like to move your animal?: \n1. Up \n2. Down \n" +
-                            "3. Right \n4. Left ");
-                    System.out.println("------------------------------------------");
-                    int movechoice = scanner.nextInt();
-                    switch (movechoice){
-                        case 1: {
-                            owner.moveAnimalUp(yourAnimalindex);
-                            break;
+                    try {
+                        System.out.println("------------------------------------------------------------");
+                        System.out.println("From which owner ( index ) would you like to move an animal?");
+                        System.out.println("------------------------------------------------------------");
+                        int ownerIndex = ownerIdChoice();
+                        Owner owner = owners.get(ownerIndex);
+                        System.out.println("---------------------------------------------");
+                        System.out.println("Which animal ( index ) would you like to move?");
+                        System.out.println("---------------------------------------------");
+                        int yourAnimalindex = owner.animalIdChoice();
+                        System.out.println("------------------------------------------");
+                        System.out.println("Where would you like to move your animal?: \n1. Up \n2. Down \n" +
+                                "3. Right \n4. Left ");
+                        System.out.println("------------------------------------------");
+                        int movechoice = scanner.nextInt();
+                        switch (movechoice) {
+                            case 1: {
+                                owner.moveAnimalUp(yourAnimalindex);
+                                break;
+                            }
+                            case 2: {
+                                owner.moveAnimalDown(yourAnimalindex);
+                                break;
+                            }
+                            case 3: {
+                                owner.moveAnimalRight(yourAnimalindex);
+                                break;
+                            }
+                            case 4: {
+                                owner.moveAnimalLeft(yourAnimalindex);
+                                break;
+                            }
+                            default: {
+                                System.out.println("You have entered a wrong number so your animal will not move.");
+                            }
                         }
-                        case 2: {
-                            owner.moveAnimalDown(yourAnimalindex);
-                            break;
-                        }
-                        case 3: {
-                            owner.moveAnimalRight(yourAnimalindex);
-                            break;
-                        }
-                        case 4: {
-                            owner.moveAnimalLeft(yourAnimalindex);
-                            break;
-                        }
-                        default:{
-                            System.out.println("You have entered a wrong number so your animal will not move.");
-                        }
-                    }
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("You have entered wrong index");
+                    } catch (InputMismatchException e){
+                        System.out.println("Wrong entry");
+                }
                     break;
                 }
                 case 9: {  // feed a chosen tortoise
