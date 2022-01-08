@@ -19,7 +19,10 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
+            System.out.println("-----------------------");
+            System.out.println("-----------------------");
             System.out.println("What would you like to do? ");
+            System.out.println("-----------------------");
             System.out.println("                           ");
             System.out.println("-----------------------");
             System.out.println("       MAIN MENU       ");
@@ -55,7 +58,6 @@ public class Menu {
                             System.out.println("Owner's index: " + index++);
                             owner.info();
                             owner.printListofAnimals();
-                            break;
                         }
                     } else {
                     System.out.println("List of owners  is empty");
@@ -64,7 +66,7 @@ public class Menu {
                     }
                     break;
                 }
-                case 4: {
+                case 4: {  // add animal
                     System.out.println("To which owner ( index ) would you like to add an animal?");
                     int ownerIndex = ownerIdChoice();
                     Owner owner = owners.get(ownerIndex);
@@ -100,16 +102,19 @@ public class Menu {
                     break;
                 }
                 case 8: {  // move an animal
-
+                    System.out.println("------------------------------------------------------------");
                     System.out.println("From which owner ( index ) would you like to move an animal?");
+                    System.out.println("------------------------------------------------------------");
                     int ownerIndex = ownerIdChoice();
                     Owner owner = owners.get(ownerIndex);
+                    System.out.println("---------------------------------------------");
                     System.out.println("Which animal ( index ) would you like to move?");
-                    owner.printListofAnimals();  // prints animal info
-                    int yourAnimalindex = owner.animalIdChoice();  //prints animal info
-
+                    System.out.println("---------------------------------------------");
+                    int yourAnimalindex = owner.animalIdChoice();
+                    System.out.println("------------------------------------------");
                     System.out.println("Where would you like to move your animal?: \n1. Up \n2. Down \n" +
                             "3. Right \n4. Left ");
+                    System.out.println("------------------------------------------");
                     int movechoice = scanner.nextInt();
                     switch (movechoice){
                         case 1: {

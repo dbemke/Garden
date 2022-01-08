@@ -61,7 +61,7 @@ public class Animal implements java.io.Serializable{
 
     }*/
     public void moveUp(){
-        if (0 <= y+1 && y+1 < BOARD_SIZE){
+        if (0 <= (y+1) && (y+1) < BOARD_SIZE){
             y = y+1;
             System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
@@ -69,7 +69,7 @@ public class Animal implements java.io.Serializable{
         }
     }
     public void moveDown(){
-        if (0 <= y-1 && y-1 < BOARD_SIZE){
+        if (0 <= (y-1) && (y-1) < BOARD_SIZE){
             y = y-1;
             System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
@@ -77,7 +77,7 @@ public class Animal implements java.io.Serializable{
         }
     }
     public void moveRight(){
-        if (0 <= x+1 && x+1 < BOARD_SIZE){
+        if (0 <= (x+1) && (x+1) < BOARD_SIZE){
             x = x+1;
             System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
@@ -85,7 +85,7 @@ public class Animal implements java.io.Serializable{
         }
     }
     public void moveLeft(){
-        if (0 <= x-1 && x-1 < BOARD_SIZE){
+        if (0 <= (x-1) && (x-1) < BOARD_SIZE){
             x = x-1;
             System.out.println("New animal position is y =  " + y + " x = " + x );
         } else {
