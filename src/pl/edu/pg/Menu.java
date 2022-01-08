@@ -160,21 +160,27 @@ public class Menu {
                     break;
                 }
                 case 9: {  // feed a chosen tortoise
-                    System.out.println("------------------------------------------------------------");
-                    System.out.println("From which owner ( index ) would you like to feed an animal?");
-                    System.out.println("------------------------------------------------------------");
-                    int ownerIndex = ownerIdChoice();
-                    Owner owner = owners.get(ownerIndex);
-                    System.out.println("---------------------------------------------");
-                    System.out.println("Which tortoise ( index ) would you like to feed?");
-                    System.out.println("---------------------------------------------");
-                    int yourAnimalindex = owner.animalIdChoice();
-                    System.out.println("------------------------------------------");
-                    owner.feedYourTortoise(yourAnimalindex);
+                    try {
+                        System.out.println("------------------------------------------------------------");
+                        System.out.println("From which owner ( index ) would you like to feed an animal?");
+                        System.out.println("------------------------------------------------------------");
+                        int ownerIndex = ownerIdChoice();
+                        Owner owner = owners.get(ownerIndex);
+                        System.out.println("---------------------------------------------");
+                        System.out.println("Which tortoise ( index ) would you like to feed?");
+                        System.out.println("---------------------------------------------");
+                        int yourAnimalindex = owner.animalIdChoice();
+                        System.out.println("------------------------------------------");
+                        owner.feedYourTortoise(yourAnimalindex);
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("You have entered wrong index");
+                    } catch (InputMismatchException e){
+                        System.out.println("Wrong entry");
+                    }
                     break;
                 }
                 case 10: {
-                    System.out.println("exit");
+                    System.out.println("Exit");
                     FileManagment.SaveOwnerstoFile(owners);
                     exit = true;
                     break;
