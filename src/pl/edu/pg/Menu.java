@@ -1,7 +1,6 @@
 package pl.edu.pg;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.lang.IndexOutOfBoundsException;
 import java.util.InputMismatchException;
@@ -234,8 +233,5 @@ public class Menu {
                 return null;
             }
         }
-
-
-
     }
 }

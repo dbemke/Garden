@@ -1,5 +1,4 @@
 package pl.edu.pg;
-
 import java.util.Scanner;
 
 public class Animal implements java.io.Serializable{
