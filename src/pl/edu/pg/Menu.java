@@ -166,7 +166,7 @@ public class Menu {
     }
     public Animal createAnimal(){
         System.out.println("------------------------------------------");
-        System.out.println("What type of animal would you like to add?\n1.A dog\n2.A cat\n3.No animal - exit");
+        System.out.println("What type of animal would you like to add?\n1.A dog\n2.A cat\n3.A tortoise");
         System.out.println("------------------------------------------");
         Scanner scanner = new Scanner(System.in);
         int animalchoice = scanner.nextInt();
@@ -181,7 +181,8 @@ public class Menu {
 
             }
             case 3:{
-
+                Tortoise new_tortoise = Tortoise.createTortoise();
+                return new_tortoise;
             }
             default: {
                 System.out.println("You have entered a wrong number .");

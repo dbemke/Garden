@@ -43,4 +43,46 @@ public class Tortoise extends Animal{
 
     }
 
+    @Override
+    public void animalInfo() {
+        super.animalInfo();
+        System.out.println("The tortoise is " + status);
+    }
+
+    @Override
+    public void moveUp() {
+
+        if (status == Status.ACTIVE){
+        super.moveUp();
+        } else {
+            System.out.println("The tortoise is in a shell. You need to feed it");
+        }
+    }
+
+    @Override
+    public void moveDown() {
+        if (status == Status.ACTIVE) {
+        super.moveDown();
+        } else {
+            System.out.println("The tortoise is in a shell. You need to feed it");
+        }
+    }
+
+    @Override
+    public void moveRight() {
+        if (status == Status.ACTIVE) {
+            super.moveRight();
+        } else {
+            System.out.println("The tortoise is in a shell. You need to feed it");
+        }
+    }
+
+    @Override
+    public void moveLeft() {
+        if (status == Status.ACTIVE) {
+            super.moveLeft();
+        } else {
+            System.out.println("The tortoise is in a shell. You need to feed it");
+        }
+    }
 }
