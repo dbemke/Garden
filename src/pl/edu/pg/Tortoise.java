@@ -54,6 +54,9 @@ public class Tortoise extends Animal{
 
         if (status == Status.ACTIVE){
         super.moveUp();
+            status = Status.INASHELL;
+            System.out.println("Tortoise status changed into " + status );
+            System.out.println("-----------------------------");
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
@@ -63,6 +66,9 @@ public class Tortoise extends Animal{
     public void moveDown() {
         if (status == Status.ACTIVE) {
         super.moveDown();
+            status = Status.INASHELL;
+            System.out.println("Tortoise status changed into " + status );
+            System.out.println("-----------------------------");
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
@@ -72,6 +78,9 @@ public class Tortoise extends Animal{
     public void moveRight() {
         if (status == Status.ACTIVE) {
             super.moveRight();
+            status = Status.INASHELL;
+            System.out.println("Tortoise status changed into " + status );
+            System.out.println("-----------------------------");
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
@@ -81,6 +90,9 @@ public class Tortoise extends Animal{
     public void moveLeft() {
         if (status == Status.ACTIVE) {
             super.moveLeft();
+            status = Status.INASHELL;
+            System.out.println("Tortoise status changed into " + status );
+            System.out.println("-----------------------------");
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
