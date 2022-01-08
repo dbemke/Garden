@@ -46,7 +46,6 @@ public class Tortoise extends Animal{
             System.out.println("Wrong age entry");
             return null;
         }
-
     }
 
     @Override
@@ -57,7 +56,6 @@ public class Tortoise extends Animal{
 
     @Override
     public void moveUp() {
-
         if (status == Status.ACTIVE){
             if (0 <= (y+1) && (y+1) < BOARD_SIZE){
                 y = y+1;
@@ -123,7 +121,6 @@ public class Tortoise extends Animal{
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
     }
-
 
     @Override
     public void feedTortoise() {

@@ -1,5 +1,4 @@
 package pl.edu.pg;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -43,6 +42,5 @@ public class Cat extends Animal{
             System.out.println("Wrong entry");
             return null;
         }
-
     }
 }

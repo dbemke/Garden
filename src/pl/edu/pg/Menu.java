@@ -1,5 +1,4 @@
 package pl.edu.pg;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.IndexOutOfBoundsException;
@@ -88,7 +87,6 @@ public class Menu {
                         System.out.println("From which owner ( index ) would you like to remove an animal?");
                         int ownerIndex = ownerIdChoice();
                         Owner owner = owners.get(ownerIndex);
-                        //owner.printListofAnimals();
                         System.out.println("Which animal ( index ) would you like to remove?");
                         int yourAnimalindex = owner.animalIdChoice();//prints list of animal
                         owner.removeAnimal(yourAnimalindex);
@@ -193,7 +191,6 @@ public class Menu {
                 default: {
                     System.out.println("You have entered a wrong number .");
                 }
-
             }
         }
     }

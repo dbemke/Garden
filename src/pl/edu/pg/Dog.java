@@ -1,5 +1,4 @@
 package pl.edu.pg;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -43,7 +42,5 @@ public class Dog extends Animal{
             System.out.println("Wrong age entry");
             return null;
         }
-
-
     }
 }
