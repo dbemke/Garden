@@ -120,7 +120,6 @@ public class Menu {
                         case 1: {
                             owner.moveAnimalUp(yourAnimalindex);
                             break;
-
                         }
                         case 2: {
                             owner.moveAnimalDown(yourAnimalindex);
@@ -138,6 +137,7 @@ public class Menu {
                             System.out.println("You have entered a wrong number so your animal will not move.");
                         }
                     }
+                    break;
                 }
                 case 9: {  // feed a chosen tortoise
                     System.out.println("------------------------------------------------------------");
@@ -146,7 +146,7 @@ public class Menu {
                     int ownerIndex = ownerIdChoice();
                     Owner owner = owners.get(ownerIndex);
                     System.out.println("---------------------------------------------");
-                    System.out.println("Which animal ( index ) would you like to feed?");
+                    System.out.println("Which tortoise ( index ) would you like to feed?");
                     System.out.println("---------------------------------------------");
                     int yourAnimalindex = owner.animalIdChoice();
                     System.out.println("------------------------------------------");

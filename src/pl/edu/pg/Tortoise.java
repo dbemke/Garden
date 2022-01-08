@@ -53,10 +53,15 @@ public class Tortoise extends Animal{
     public void moveUp() {
 
         if (status == Status.ACTIVE){
-        super.moveUp();
-            status = Status.INASHELL;
-            System.out.println("Tortoise status changed into " + status );
-            System.out.println("-----------------------------");
+            if (0 <= (y+1) && (y+1) < BOARD_SIZE){
+                y = y+1;
+                System.out.println("New animal position is y =  " + y + " x = " + x );
+                status = Status.INASHELL;
+                System.out.println("Tortoise status changed into " + status );
+                System.out.println("-----------------------------");
+            } else {
+                System.out.println("Sorry but you can't move your animal in this direction");
+            }
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
@@ -65,10 +70,15 @@ public class Tortoise extends Animal{
     @Override
     public void moveDown() {
         if (status == Status.ACTIVE) {
-        super.moveDown();
-            status = Status.INASHELL;
-            System.out.println("Tortoise status changed into " + status );
-            System.out.println("-----------------------------");
+            if (0 <= (y-1) && (y-1) < BOARD_SIZE){
+                y = y-1;
+                System.out.println("New animal position is y =  " + y + " x = " + x );
+                status = Status.INASHELL;
+                System.out.println("Tortoise status changed into " + status );
+                System.out.println("-----------------------------");
+            } else {
+                System.out.println("Sorry but you can't move your animal in this direction");
+            }
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
@@ -77,10 +87,15 @@ public class Tortoise extends Animal{
     @Override
     public void moveRight() {
         if (status == Status.ACTIVE) {
-            super.moveRight();
-            status = Status.INASHELL;
-            System.out.println("Tortoise status changed into " + status );
-            System.out.println("-----------------------------");
+            if (0 <= (x+1) && (x+1) < BOARD_SIZE){
+                x = x+1;
+                System.out.println("New animal position is y =  " + y + " x = " + x );
+                status = Status.INASHELL;
+                System.out.println("Tortoise status changed into " + status );
+                System.out.println("-----------------------------");
+            } else {
+                System.out.println("Sorry but you can't move your animal in this direction");
+            }
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
@@ -89,22 +104,20 @@ public class Tortoise extends Animal{
     @Override
     public void moveLeft() {
         if (status == Status.ACTIVE) {
-            super.moveLeft();
-            status = Status.INASHELL;
-            System.out.println("Tortoise status changed into " + status );
-            System.out.println("-----------------------------");
+            if (0 <= (x-1) && (x-1) < BOARD_SIZE){
+                x = x-1;
+                System.out.println("New animal position is y =  " + y + " x = " + x );
+                status = Status.INASHELL;
+                System.out.println("Tortoise status changed into " + status );
+                System.out.println("-----------------------------");
+            } else {
+                System.out.println("Sorry but you can't move your animal in this direction");
+            }
         } else {
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
     }
 
-   /*public void feedTortoise(){
-        if (status == Status.INASHELL){
-            status = Status.ACTIVE;
-        } else {
-            System.out.println("You can't feed the tortoise because it is ACTIVE");
-        }
-    }*/
 
     @Override
     public void feedTortoise() {
