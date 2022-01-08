@@ -37,14 +37,11 @@ public class Menu {
                 case 1: {
                     Owner new_owner = Owner.CreateOwner();
                     owners.add(new_owner);
-                    for (Owner owner: owners) {
-                        owner.info();
-                    }
                     FileManagment.SaveOwnerstoFile(owners);
                     break;
                 }
 
-                case 2: {
+                case 2: {  // remove an owner
                     System.out.println("Which owner ( index ) would you like to delete?");
                     int ownerIndex = ownerIdChoice();
                     owners.remove(ownerIndex);
@@ -73,16 +70,15 @@ public class Menu {
                     Animal animal = createAnimal();
                     owner.addAnimal(animal);
                     FileManagment.SaveOwnerstoFile(owners);
-
                     break;
-
                 }
-                case 5:{
+                case 5:{ // remove an animal
                     System.out.println("From which owner ( index ) would you like to remove an animal?");
                     int ownerIndex = ownerIdChoice();
                     Owner owner = owners.get(ownerIndex);
-                    owner.printListofAnimals();
-                    int yourAnimalindex = owner.animalIdChoice();
+                    //owner.printListofAnimals();
+                    System.out.println("Which animal ( index ) would you like to remove?");
+                    int yourAnimalindex = owner.animalIdChoice();//prints list of animal
                     owner.removeAnimal(yourAnimalindex);
                     FileManagment.SaveOwnerstoFile(owners);
                     break;
