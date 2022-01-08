@@ -85,8 +85,20 @@ public class Owner implements java.io.Serializable {
         Scanner scanner = new Scanner(System.in);
         int animalIndex = scanner.nextInt();
         return animalIndex;
-
     }
+    /*public void printListofTortoises(){
+        for(Animal animal : animals) {
+            if(animal instanceof Tortoise){
+                int index = 0;
+                for (Tortoise tortoise : ) {
+                    System.out.println("Tortoise's index: " + index++);
+                    tortoise.animalInfo();
+                    System.out.println("-----------------------");
+                }
+            }
+        }
+    }*/
+
     public void removeAnimal(int yourAnimalindex){
         animals.remove(yourAnimalindex);
     }
@@ -106,6 +118,10 @@ public class Owner implements java.io.Serializable {
     public void moveAnimalLeft(int yourAnimalindex){
         Animal animal = animals.get(yourAnimalindex);
         animal.moveLeft();
+    }
+    public void feedYourTortoise(int yourAnimalindex){
+        Animal animal = animals.get(yourAnimalindex);
+        animal.feedTortoise();
     }
 
 ////////////////////////////////////////////////////////

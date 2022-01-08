@@ -97,4 +97,22 @@ public class Tortoise extends Animal{
             System.out.println("The tortoise is in a shell. You need to feed it");
         }
     }
+
+   /*public void feedTortoise(){
+        if (status == Status.INASHELL){
+            status = Status.ACTIVE;
+        } else {
+            System.out.println("You can't feed the tortoise because it is ACTIVE");
+        }
+    }*/
+
+    @Override
+    public void feedTortoise() {
+        super.feedTortoise();
+        if (status == Status.INASHELL){
+            status = Status.ACTIVE;
+        } else {
+            System.out.println("You can't feed the tortoise because it is ACTIVE");
+        }
+    }
 }

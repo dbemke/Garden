@@ -64,6 +64,9 @@ public class Animal implements java.io.Serializable{
             System.out.println("Sorry but you can't move your animal in this direction");
         }
     }
+    public void feedTortoise(){
+
+    }
 
     ////////////////////////////////////////////////////////////////////////////
     public String getFirstname() {

@@ -30,7 +30,7 @@ public class Menu {
             System.out.println("1. Add an owner.\n2. Delete an owner.\n" +
                     "3. Print the list of owners.\n4. Add an animal.\n5. Delete an animal\n" +
                     "6. Print the list of animals of a chosen owner.\n7. Print all animals\n" +
-                    "8. Move an animal\n9. Exit.");
+                    "8. Move an animal\n9. Feed a chosen tortoise\n10. Exit.");
             System.out.println("-----------------------");
             int choice = scanner.nextInt();
             switch (choice) {
@@ -139,7 +139,21 @@ public class Menu {
                         }
                     }
                 }
-                case 9: {
+                case 9: {  // feed a chosen tortoise
+                    System.out.println("------------------------------------------------------------");
+                    System.out.println("From which owner ( index ) would you like to feed an animal?");
+                    System.out.println("------------------------------------------------------------");
+                    int ownerIndex = ownerIdChoice();
+                    Owner owner = owners.get(ownerIndex);
+                    System.out.println("---------------------------------------------");
+                    System.out.println("Which animal ( index ) would you like to feed?");
+                    System.out.println("---------------------------------------------");
+                    int yourAnimalindex = owner.animalIdChoice();
+                    System.out.println("------------------------------------------");
+                    owner.feedYourTortoise(yourAnimalindex);
+                    break;
+                }
+                case 10: {
                     System.out.println("exit");
                     FileManagment.SaveOwnerstoFile(owners);
                     exit = true;
