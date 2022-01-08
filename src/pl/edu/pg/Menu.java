@@ -46,10 +46,16 @@ public class Menu {
                 }
 
                 case 2: {  // remove an owner
-                    System.out.println("Which owner ( index ) would you like to delete?");
-                    int ownerIndex = ownerIdChoice();
-                    owners.remove(ownerIndex);
-                    FileManagment.SaveOwnerstoFile(owners);
+                    try {
+                        System.out.println("Which owner ( index ) would you like to delete?");
+                        int ownerIndex = ownerIdChoice();
+                        owners.remove(ownerIndex);
+                        FileManagment.SaveOwnerstoFile(owners);
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("You have entered wrong index");
+                    } catch (InputMismatchException e){
+                        System.out.println("Wrong entry");
+                    }
                     break;
                 }
                 case 3: {      // list of owners with animals
@@ -96,11 +102,17 @@ public class Menu {
                     break;
                 }
                 case 6:{ // list of animals of a chosen owner
-                    System.out.println("Which owner's animals would you like to see? " +
-                            "Enter owner's index");
-                    int ownerIndex = ownerIdChoice();
-                    Owner owner = owners.get(ownerIndex);
-                    owner.printListofAnimals();
+                    try {
+                        System.out.println("Which owner's animals would you like to see? " +
+                                "Enter owner's index");
+                        int ownerIndex = ownerIdChoice();
+                        Owner owner = owners.get(ownerIndex);
+                        owner.printListofAnimals();
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("You have entered wrong index");
+                    } catch (InputMismatchException e){
+                        System.out.println("Wrong entry");
+                    }
                     break;
                 }
                 case 7: {   // list of animals
